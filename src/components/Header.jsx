@@ -13,9 +13,9 @@ function Header() {
           <span className="header-title">Oltaken</span>
         </Link>
         <nav className="header-nav">
-          <a href="/#/" className={hash === '#/' || hash === '' ? 'active' : ''}>
+          <Link to="/" className={hash === '#/' || hash === '' ? 'active' : ''}>
             Home
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
