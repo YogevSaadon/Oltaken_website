@@ -1,0 +1,94 @@
+.product-card {
+  background: #151515;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: border-color 0.2s;
+}
+
+.product-card:hover {
+  border-color: #444;
+}
+
+.product-card-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  flex-shrink: 0;
+  background: #1a1a1a;
+}
+
+.product-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-card-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0 0 6px 0;
+}
+
+.product-card-desc {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.product-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.product-tag {
+  background: #222;
+  color: #aaa;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid #333;
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #c0c0c0;
+  color: #111;
+}
+
+.btn-primary:hover {
+  background: #e0e0e0;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #c0c0c0;
+  border: 1px solid #444;
+}
+
+.btn-secondary:hover {
+  border-color: #888;
+  color: #e0e0e0;
+}

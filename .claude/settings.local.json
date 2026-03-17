@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(mkdir -p src/components src/pages src/data src/assets/branding src/assets/products/driftick)",
+      "Bash(mv assets/branding/oltaken-icon.png src/assets/branding/)",
+      "Bash(mv assets/branding/oltaken-logo.png src/assets/branding/)",
+      "Bash(mv assets/products/driftick/driftick-icon.png src/assets/products/driftick/)",
+      "Bash(rm -rf assets)",
+      "Bash(rm -rf src/assets/react.svg public/vite.svg)",
+      "Bash(npx vite:*)",
+      "Bash(magick --version)"
+    ]
+  }
+}

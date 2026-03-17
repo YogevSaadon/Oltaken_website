@@ -1,0 +1,129 @@
+.product-detail {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.product-detail-inner {
+  padding: 40px 0 64px;
+}
+
+.back-link {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #ccc;
+}
+
+.product-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.product-detail-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 20px;
+  background: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.product-detail-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin: 0 0 10px 0;
+}
+
+.product-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.product-detail-desc {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.product-previews {
+  margin-bottom: 36px;
+}
+
+.product-previews-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #c0c0c0;
+  margin-bottom: 16px;
+}
+
+.product-previews-grid,
+.product-previews-placeholder {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.product-preview {
+  height: 280px;
+  width: auto;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  flex-shrink: 0;
+}
+
+.preview-placeholder {
+  width: 180px;
+  height: 320px;
+  border-radius: 12px;
+  border: 1px dashed #333;
+  background: #151515;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .product-previews-grid,
+  .product-previews-placeholder {
+    scroll-snap-type: x mandatory;
+  }
+
+  .product-preview,
+  .preview-placeholder {
+    scroll-snap-align: center;
+    min-width: 65vw;
+    width: 65vw;
+    height: auto;
+    aspect-ratio: 9 / 16;
+  }
+}
+
+.product-detail-actions {
+  margin-bottom: 40px;
+}
+
+.product-detail-note {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.product-detail-note a {
+  color: #999;
+  text-decoration: underline;
+}
+
+.product-detail-note a:hover {
+  color: #ccc;
+}
