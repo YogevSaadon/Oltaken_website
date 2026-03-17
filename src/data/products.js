@@ -1,4 +1,8 @@
 import driftickIcon from '../assets/products/driftick/driftick-icon.png';
+import driftickApp1 from '../assets/products/driftick/previews/phone_app_1.png';
+import driftickApp2 from '../assets/products/driftick/previews/phone_app_2.png';
+import driftickWidget1 from '../assets/products/driftick/previews/phone_widget_1.png';
+import driftickWidget2 from '../assets/products/driftick/previews/phone_widget_2.png';
 
 const products = [
   {
@@ -13,7 +17,7 @@ const products = [
     tags: ['Android', 'Free', 'Local Data', 'Widget'],
     status: 'live',
     featured: true,
-    previews: [],
+    previews: [driftickApp1, driftickApp2, driftickWidget1, driftickWidget2],
   },
   // Add more products here:
   // {
