@@ -1,8 +1,8 @@
-import driftickIcon from '../assets/products/driftick/driftick-icon.png';
-import driftickApp1 from '../assets/products/driftick/previews/phone_app_1.png';
-import driftickApp2 from '../assets/products/driftick/previews/phone_app_2.png';
-import driftickWidget1 from '../assets/products/driftick/previews/phone_widget_1.png';
-import driftickWidget2 from '../assets/products/driftick/previews/phone_widget_2.png';
+import driftickIcon from '../assets/products/driftick/driftick-icon.webp';
+import driftickApp1 from '../assets/products/driftick/previews/phone_app_1.webp';
+import driftickApp2 from '../assets/products/driftick/previews/phone_app_2.webp';
+import driftickWidget1 from '../assets/products/driftick/previews/phone_widget_1.webp';
+import driftickWidget2 from '../assets/products/driftick/previews/phone_widget_2.webp';
 
 const products = [
   {

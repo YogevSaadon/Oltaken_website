@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import oltakenIcon from '../assets/branding/oltaken-icon.png';
+import oltakenIcon from '../assets/branding/oltaken-icon.webp';
 import './Header.css';
 
 function Header() {

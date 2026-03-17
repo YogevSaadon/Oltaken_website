@@ -1,4 +1,4 @@
-import oltakenLogo from '../assets/branding/oltaken-logo.png';
+import oltakenLogo from '../assets/branding/oltaken-logo.webp';
 import products from '../data/products';
 import ProductCard from '../components/ProductCard';
 import './Home.css';
