@@ -1,10 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import products from '../data/products';
+import { getStoreUrl } from '../utils/products';
 import './ProductDetail.css';
 
 function ProductDetail() {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
+  const storeUrl = product ? getStoreUrl(product) : null;
 
   if (!product) {
     return (
@@ -72,9 +74,9 @@ function ProductDetail() {
         )}
 
         <div className="product-detail-actions">
-          {product.storeUrl && product.storeUrl !== '#' ? (
+          {storeUrl ? (
             <a
-              href={product.storeUrl}
+              href={storeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -82,13 +84,11 @@ function ProductDetail() {
               Get on Google Play
             </a>
           ) : (
-            <span className="btn btn-secondary" style={{ cursor: 'default' }}>
-              Coming to Google Play
-            </span>
+            <p className="product-store-status">Coming soon to Google Play</p>
           )}
         </div>
 
-        <div className="product-detail-actions" style={{ marginBottom: 0 }}>
+        <div className="product-detail-actions product-detail-actions-last">
           <Link to={`/privacy/${product.id}`} className="btn btn-secondary">
             Privacy Policy
           </Link>

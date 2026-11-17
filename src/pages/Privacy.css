@@ -68,3 +68,7 @@
 .privacy a:hover {
   color: #e0e0e0;
 }
+
+.privacy a.btn {
+  text-decoration: none;
+}

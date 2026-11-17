@@ -1,16 +1,17 @@
 .product-card {
-  background: #151515;
-  border: 1px solid #2a2a2a;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
   border-radius: 16px;
   padding: 24px;
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  transition: border-color 0.2s;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .product-card:hover {
-  border-color: #444;
+  border-color: #46464a;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 12px 32px -16px rgba(255, 255, 255, 0.08);
 }
 
 .product-card-icon {
@@ -29,12 +30,12 @@
 .product-card-name {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #e0e0e0;
+  color: var(--text);
   margin: 0 0 6px 0;
 }
 
 .product-card-desc {
-  color: #999;
+  color: var(--text-soft);
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0 0 12px 0;
@@ -48,12 +49,12 @@
 }
 
 .product-tag {
-  background: #222;
-  color: #aaa;
+  background: var(--surface-raised);
+  color: var(--text-soft);
   font-size: 0.75rem;
   padding: 3px 10px;
   border-radius: 100px;
-  border: 1px solid #333;
+  border: 1px solid var(--line-strong);
 }
 
 .product-card-actions {
@@ -74,21 +75,23 @@
 }
 
 .btn-primary {
-  background: #c0c0c0;
-  color: #111;
+  background: var(--oltaken-silver-gradient);
+  color: #000;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
-  background: #e0e0e0;
+  filter: brightness(1.06);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #c0c0c0;
-  border: 1px solid #444;
+  color: var(--oltaken-silver-mid);
+  border: 1px solid #3a3a3d;
 }
 
 .btn-secondary:hover {
-  border-color: #888;
-  color: #e0e0e0;
+  border-color: #8a8b8e;
+  color: var(--text);
 }

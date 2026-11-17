@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
+import { getStoreUrl, preloadProductImages } from '../utils/products';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
+  const storeUrl = getStoreUrl(product);
+  const preload = () => preloadProductImages(product);
+
   return (
     <div className="product-card">
-      <img src={product.icon} alt={product.name} className="product-card-icon" />
+      <img src={product.icon} alt="" className="product-card-icon" width="72" height="72" />
       <div className="product-card-info">
         <h3 className="product-card-name">{product.name}</h3>
         <p className="product-card-desc">{product.shortDescription}</p>
@@ -16,12 +20,19 @@ function ProductCard({ product }) {
           ))}
         </div>
         <div className="product-card-actions">
-          <Link to={`/product/${product.id}`} className="btn btn-secondary">
+          <Link
+            to={`/product/${product.id}`}
+            className="btn btn-secondary"
+            aria-label={`About ${product.name}`}
+            onPointerEnter={preload}
+            onFocus={preload}
+            onTouchStart={preload}
+          >
             About
           </Link>
-          {product.storeUrl && product.storeUrl !== '#' && (
+          {storeUrl && (
             <a
-              href={product.storeUrl}
+              href={storeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"

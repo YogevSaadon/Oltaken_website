@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { COMPANY_NAME, CONTACT_EMAIL } from '../data/site';
 import './Footer.css';
 
 function Footer() {
@@ -7,9 +7,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <p className="footer-copy">&copy; {year} Oltaken. All rights reserved.</p>
+        <p className="footer-copy">&copy; {year} {COMPANY_NAME}. All rights reserved.</p>
         <div className="footer-links">
-          <a href="mailto:yogev1234@gmail.com">yogev1234@gmail.com</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </div>
       </div>
     </footer>

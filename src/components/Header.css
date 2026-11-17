@@ -2,9 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #222;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 
 .header-inner {
@@ -22,19 +23,23 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #e0e0e0;
 }
 
 .header-icon {
   width: 36px;
   height: 36px;
-  border-radius: 8px;
+  display: block;
 }
 
+/* Silver text in the same direction as the logo: lit from the top right */
 .header-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  background: var(--oltaken-silver-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .header-nav {
@@ -43,7 +48,7 @@
 }
 
 .header-nav a {
-  color: #999;
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s;
@@ -51,5 +56,5 @@
 
 .header-nav a:hover,
 .header-nav a.active {
-  color: #e0e0e0;
+  color: var(--text);
 }

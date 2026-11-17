@@ -1,18 +1,40 @@
-import oltakenLogo from '../assets/branding/oltaken-logo.webp';
+import { useEffect } from 'react';
+import oltakenLogo from '../assets/branding/oltaken-software-logo.svg';
 import products from '../data/products';
 import ProductCard from '../components/ProductCard';
+import { preloadProductImages } from '../utils/products';
 import './Home.css';
 
 function Home() {
   const apps = products.filter((p) => p.category === 'app');
   const games = products.filter((p) => p.category === 'game');
 
+  // Once the home page is idle, fetch product page images in the background
+  // so they show up instantly when someone opens a product.
+  useEffect(() => {
+    const preloadAll = () => products.forEach(preloadProductImages);
+
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(preloadAll, { timeout: 2000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const id = window.setTimeout(preloadAll, 500);
+    return () => window.clearTimeout(id);
+  }, []);
+
   return (
     <div className="home">
       <section className="hero">
-        <div className="hero-logo-container">
-          <img src={oltakenLogo} alt="Oltaken Studio" className="hero-logo" />
-        </div>
+        <h1 className="hero-title">
+          <img
+            src={oltakenLogo}
+            alt="OLTAKEN software"
+            className="hero-logo"
+            width="900"
+            height="300"
+            fetchPriority="high"
+          />
+        </h1>
         <p className="hero-sub">Apps and games built with a clean, practical mindset.</p>
       </section>
 

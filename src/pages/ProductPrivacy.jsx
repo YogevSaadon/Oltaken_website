@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import privacyPolicies from '../data/privacy';
+import { CONTACT_EMAIL } from '../data/site';
 import './Privacy.css';
 
 function ProductPrivacy() {
@@ -39,7 +40,7 @@ function ProductPrivacy() {
         <h2>Contact</h2>
         <p>
           Questions? Reach out at{' '}
-          <a href="mailto:yogev1234@gmail.com">yogev1234@gmail.com</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </p>
       </div>
     </div>
