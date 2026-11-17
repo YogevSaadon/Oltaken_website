@@ -1,11 +1,11 @@
 const privacyPolicies = {
   driftick: {
-    appName: 'DriftTick',
+    appName: 'DrifTick',
     lastUpdated: 'March 2026',
     sections: [
       {
-        title: 'What data does DriftTick collect?',
-        body: 'DriftTick does not collect, store, or transmit personal data to us or to third parties. DriftTick does not use advertising SDKs, analytics services, or third-party backend services at this time.',
+        title: 'What data does DrifTick collect?',
+        body: 'DrifTick does not collect, store, or transmit personal data to us or to third parties. DrifTick does not use advertising SDKs, analytics services, or third-party backend services at this time.',
       },
       {
         title: 'Where is my data stored?',
@@ -13,7 +13,7 @@ const privacyPolicies = {
       },
       {
         title: 'Your choices',
-        body: 'You can delete all app data at any time by clearing app storage in your device settings or by uninstalling DriftTick.',
+        body: 'You can delete all app data at any time by clearing app storage in your device settings or by uninstalling DrifTick.',
       },
       {
         title: 'Changes',

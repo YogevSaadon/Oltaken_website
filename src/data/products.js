@@ -1,23 +1,25 @@
-import driftickIcon from '../assets/products/driftick/driftick-icon.webp';
-import driftickApp1 from '../assets/products/driftick/previews/phone_app_1.webp';
-import driftickApp2 from '../assets/products/driftick/previews/phone_app_2.webp';
-import driftickWidget1 from '../assets/products/driftick/previews/phone_widget_1.webp';
-import driftickWidget2 from '../assets/products/driftick/previews/phone_widget_2.webp';
+import driftickIcon from '../assets/products/driftick/driftick-icon.svg';
+// Previews: the Play Store phone screenshots, resized to 720x1280 WebP for the web.
+import driftickDay from '../assets/products/driftick/previews/phone-1-day.webp';
+import driftickColors from '../assets/products/driftick/previews/phone-2-colors.webp';
+import driftickWidget from '../assets/products/driftick/previews/phone-3-widget.webp';
+import driftickBlocks from '../assets/products/driftick/previews/phone-4-blocks.webp';
+import driftickLightDark from '../assets/products/driftick/previews/phone-5-light-dark.webp';
 
 const products = [
   {
     id: 'driftick',
-    name: 'DriftTick',
+    name: 'DrifTick',
     category: 'app',
     shortDescription: 'Visualize your day passing in real time. Built for focus, great for ADHD.',
     fullDescription:
-      'DriftTick lets you visually see the time of day as it passes. A simple, powerful way to stay aware of where your hours go. Set your work start time, wind-down hour, or when your day begins, and watch the clock fill as time moves forward. Perfect for anyone who struggles with time blindness or procrastination, especially if you have ADHD. Includes a home screen widget for a quick glance and a fullscreen mode to turn your phone or tablet into a clean desk clock. No accounts, no cloud, everything stays on your device.',
+      'DrifTick lets you visually see the time of day as it passes. A simple, powerful way to stay aware of where your hours go. Set your work start time, wind-down hour, or when your day begins, and watch the clock fill as time moves forward. Perfect for anyone who struggles with time blindness or procrastination, especially if you have ADHD. Includes a home screen widget for a quick glance and a fullscreen mode to turn your phone or tablet into a clean desk clock. No accounts, no cloud, everything stays on your device.',
     icon: driftickIcon,
     storeUrl: '#',
     tags: ['Android', 'Free', 'Local Data', 'Widget'],
     status: 'live',
     featured: true,
-    previews: [driftickApp1, driftickApp2, driftickWidget1, driftickWidget2],
+    previews: [driftickDay, driftickColors, driftickWidget, driftickBlocks, driftickLightDark],
   },
   // Add more products here:
   // {
