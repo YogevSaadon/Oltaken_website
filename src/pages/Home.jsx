@@ -28,7 +28,7 @@ function Home() {
         <h1 className="hero-title">
           <img
             src={oltakenLogo}
-            alt="OLTAKEN software"
+            alt="Oltaken"
             className="hero-logo"
             width="900"
             height="300"
