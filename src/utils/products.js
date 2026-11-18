@@ -24,5 +24,5 @@ function preloadImage(src) {
 
 export function preloadProductImages(product) {
   preloadImage(product.icon);
-  product.previews?.forEach(preloadImage);
+  product.previews?.forEach((preview) => preloadImage(preview.src));
 }

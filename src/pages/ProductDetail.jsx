@@ -52,11 +52,11 @@ function ProductDetail() {
           <div className="product-previews">
             <h2 className="product-previews-title">Preview</h2>
             <div className="product-previews-grid">
-              {product.previews.map((src, i) => (
+              {product.previews.map(({ src, alt }, i) => (
                 <img
-                  key={i}
+                  key={src}
                   src={src}
-                  alt={`${product.name} preview ${i + 1}`}
+                  alt={alt || `${product.name} preview ${i + 1}`}
                   className="product-preview"
                 />
               ))}

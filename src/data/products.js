@@ -1,10 +1,11 @@
 import driftickIcon from '../assets/products/driftick/driftick-icon.svg';
-// Previews: the Play Store phone screenshots, resized to 720x1280 WebP for the web.
+// Previews: the Play Store phone screenshots (DT kit, play-store/3-phone-screenshots),
+// resized to 720x1280 WebP for the web.
 import driftickDay from '../assets/products/driftick/previews/phone-1-day.webp';
 import driftickColors from '../assets/products/driftick/previews/phone-2-colors.webp';
 import driftickWidget from '../assets/products/driftick/previews/phone-3-widget.webp';
 import driftickBlocks from '../assets/products/driftick/previews/phone-4-blocks.webp';
-import driftickLightDark from '../assets/products/driftick/previews/phone-5-light-dark.webp';
+import driftickTwoColors from '../assets/products/driftick/previews/phone-5-two-colors.webp';
 
 const products = [
   {
@@ -19,7 +20,14 @@ const products = [
     tags: ['Android', 'Free', 'Local Data', 'Widget'],
     status: 'live',
     featured: true,
-    previews: [driftickDay, driftickColors, driftickWidget, driftickBlocks, driftickLightDark],
+    // Alt text follows each screenshot's caption.
+    previews: [
+      { src: driftickDay, alt: 'See your day fill up. See what is gone and what is left.' },
+      { src: driftickColors, alt: 'Work, rest and sleep: each part of your day gets its own color.' },
+      { src: driftickWidget, alt: 'On your home screen: a widget that fills as your day goes.' },
+      { src: driftickBlocks, alt: 'Your day, your blocks: name them, then watch them pass.' },
+      { src: driftickTwoColors, alt: 'Orange or blue: two looks, switch any time.' },
+    ],
   },
   // Add more products here:
   // {
@@ -33,6 +41,7 @@ const products = [
   //   tags: ['Android', 'Free', 'Ads'],
   //   status: 'live',
   //   featured: true,
+  //   previews: [{ src: importedScreenshot, alt: 'What the screenshot shows' }],
   // },
 ];
 
