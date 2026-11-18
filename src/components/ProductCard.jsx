@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { getStoreUrl, preloadProductImages } from '../utils/products';
+import { preloadProductImages } from '../utils/products';
+import PrimaryAction from './PrimaryAction';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
-  const storeUrl = getStoreUrl(product);
   const preload = () => preloadProductImages(product);
 
   return (
@@ -30,16 +30,7 @@ function ProductCard({ product }) {
           >
             About
           </Link>
-          {storeUrl && (
-            <a
-              href={storeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
-              Get on Google Play
-            </a>
-          )}
+          <PrimaryAction product={product} />
         </div>
       </div>
     </div>

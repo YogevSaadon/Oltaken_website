@@ -1,11 +1,15 @@
 import { useParams, Link } from 'react-router-dom';
 import privacyPolicies from '../data/privacy';
 import { CONTACT_EMAIL } from '../data/site';
+import { useDocumentTitle } from '../utils/useDocumentTitle';
 import './Privacy.css';
 
+// The plain HTML copy (plugins/static-privacy-pages.js) renders the same policy data.
+// If you change the wording on this page, change it there too.
 function ProductPrivacy() {
   const { id } = useParams();
   const policy = privacyPolicies[id];
+  useDocumentTitle(policy ? `${policy.appName} Privacy Policy` : 'Policy not found');
 
   if (!policy) {
     return (
@@ -28,7 +32,13 @@ function ProductPrivacy() {
         </Link>
 
         <h1>{policy.appName} Privacy Policy</h1>
-        <p className="privacy-updated">Last Updated: {policy.lastUpdated}</p>
+        <p className="privacy-updated">
+          Last Updated: {policy.lastUpdated}
+          <span aria-hidden="true"> · </span>
+          <a href={`privacy-${id}.html`} className="privacy-plain-link">
+            Plain version
+          </a>
+        </p>
 
         {policy.sections.map((section, i) => (
           <div key={i}>

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import staticPrivacyPages from './plugins/static-privacy-pages.js';
 
 // Content Security Policy for the published site. GitHub Pages can't send
 // custom headers, so it goes in a <meta> tag. The site only loads its own
@@ -36,6 +37,6 @@ function contentSecurityPolicy() {
 }
 
 export default defineConfig({
-  plugins: [react(), contentSecurityPolicy()],
+  plugins: [react(), contentSecurityPolicy(), staticPrivacyPages()],
   base: './',
 });

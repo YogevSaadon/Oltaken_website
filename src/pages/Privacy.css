@@ -72,3 +72,7 @@
 .privacy a.btn {
   text-decoration: none;
 }
+
+.privacy .privacy-plain-link {
+  color: #888;
+}

@@ -1,13 +1,26 @@
-// Returns the product's store link only if it is a real https URL.
-// Placeholders like '#' or an empty string mean "not on the store yet",
+// Links from the product data are used only if they are real https URLs.
+// Placeholders like '#' or an empty string mean "not set yet",
 // and anything else (http:, javascript:, typos) is never rendered as a link.
-export function getStoreUrl(product) {
+function httpsUrl(value) {
   try {
-    const url = new URL(product.storeUrl);
+    const url = new URL(value);
     return url.protocol === 'https:' ? url.href : null;
   } catch {
     return null;
   }
+}
+
+export const getStoreUrl = (product) => httpsUrl(product.storeUrl);
+export const getTesterUrl = (product) => httpsUrl(product.testerUrl);
+
+// The one main button for a product: the store once it's published, the tester
+// signup while it's in a closed test, otherwise nothing.
+export function getPrimaryAction(product) {
+  const storeUrl = getStoreUrl(product);
+  if (storeUrl) return { href: storeUrl, label: 'Get on Google Play' };
+  const testerUrl = getTesterUrl(product);
+  if (testerUrl) return { href: testerUrl, label: 'Join the test' };
+  return null;
 }
 
 // Images we've already started loading. Holding on to the Image objects keeps

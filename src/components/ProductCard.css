@@ -95,3 +95,22 @@
   border-color: #8a8b8e;
   color: var(--text);
 }
+
+/* "Coming soon to Google Play": a plain status line, not a button, since it isn't clickable */
+.product-store-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+}
+
+.product-store-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--oltaken-silver-flat);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}

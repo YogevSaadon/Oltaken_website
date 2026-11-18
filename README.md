@@ -1,16 +1,31 @@
-# React + Vite
+# Oltaken website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website for Oltaken, an app and game developer: https://yogevsaadon.github.io/Oltaken_website/
 
-Currently, two official plugins are available:
+It shows Oltaken's products and hosts their privacy policies, which Google Play links to.
+It's a small React + Vite site with plain CSS, served by GitHub Pages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run and build
 
-## React Compiler
+```sh
+npm ci            # install
+npm run dev       # local dev server with hot reload
+npm run build     # production build into dist/
+npm run preview   # serve dist/ locally to check the build
+npm run lint
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Pushing to `main` deploys the site: `.github/workflows/deploy.yml` builds it and publishes `dist/` to GitHub Pages.
 
-## Expanding the ESLint configuration
+## Where things live
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/data/site.js`: company name, contact email, home page tagline.
+- `src/data/products.js`: products (text, icon, screenshots, store and tester links).
+- `src/data/privacy.js`: privacy policies. Each one is shown at `#/privacy/<id>` and also built
+  as a plain HTML page, `privacy-<id>.html`, by `plugins/static-privacy-pages.js`.
+- `public/`: files copied as they are: favicons and `og.png`, the link preview image.
+- `vite.config.js`: the Content Security Policy. The site loads only its own files. Anything from
+  another domain (fonts, embeds) has to be added there, or the browser blocks it.
+
+The site has no analytics, cookies or trackers, which is what its privacy policies promise.
+Keep it that way.

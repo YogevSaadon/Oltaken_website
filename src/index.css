@@ -137,7 +137,7 @@ main {
   }
 
   .product-detail-actions {
-    text-align: center;
+    align-items: center;
   }
 
   .preview-placeholder {

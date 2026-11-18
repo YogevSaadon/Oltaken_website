@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useDocumentTitle } from '../utils/useDocumentTitle';
 import './Privacy.css';
 
 function NotFound() {
+  useDocumentTitle('Page not found');
+
   return (
     <div className="privacy">
       <div className="privacy-inner">

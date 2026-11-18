@@ -81,6 +81,11 @@
   gap: 32px;
 }
 
+/* Only one category has products: let it use the full width */
+.products-columns-single {
+  grid-template-columns: 1fr;
+}
+
 .products-section {
   margin-bottom: 56px;
 }
@@ -100,15 +105,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.section-empty {
-  color: var(--text-faint);
-  font-style: italic;
-  padding: 24px;
-  text-align: center;
-  border: 1px dashed var(--line-strong);
-  border-radius: 12px;
 }
 
 @media (max-width: 768px) {

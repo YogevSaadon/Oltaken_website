@@ -1,13 +1,26 @@
 import { useEffect } from 'react';
 import oltakenLogo from '../assets/branding/oltaken-software-logo.svg';
 import products from '../data/products';
+import { TAGLINE } from '../data/site';
 import ProductCard from '../components/ProductCard';
+import FeaturedProduct from '../components/FeaturedProduct';
 import { preloadProductImages } from '../utils/products';
+import { useDocumentTitle } from '../utils/useDocumentTitle';
 import './Home.css';
 
+const CATEGORIES = [
+  { key: 'app', title: 'Apps' },
+  { key: 'game', title: 'Games' },
+];
+
 function Home() {
-  const apps = products.filter((p) => p.category === 'app');
-  const games = products.filter((p) => p.category === 'game');
+  useDocumentTitle();
+
+  // Only categories that have something in them get a section.
+  const sections = CATEGORIES.map((category) => ({
+    ...category,
+    products: products.filter((p) => p.category === category.key),
+  })).filter((section) => section.products.length > 0);
 
   // Once the home page is idle, fetch product page images in the background
   // so they show up instantly when someone opens a product.
@@ -35,36 +48,26 @@ function Home() {
             fetchPriority="high"
           />
         </h1>
-        <p className="hero-sub">Apps and games built with a clean, practical mindset.</p>
+        {TAGLINE && <p className="hero-sub">{TAGLINE}</p>}
       </section>
 
-      <div className="products-columns">
-        <section className="products-section" id="apps">
-          <h2 className="section-title">Apps</h2>
-          {apps.length > 0 ? (
-            <div className="products-list">
-              {apps.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          ) : (
-            <p className="section-empty">Coming soon.</p>
-          )}
-        </section>
-
-        <section className="products-section" id="games">
-          <h2 className="section-title">Games</h2>
-          {games.length > 0 ? (
-            <div className="products-list">
-              {games.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          ) : (
-            <p className="section-empty">Coming soon.</p>
-          )}
-        </section>
-      </div>
+      {products.length === 1 ? (
+        // A single product gets the whole stage.
+        <FeaturedProduct product={products[0]} />
+      ) : (
+        <div className={`products-columns${sections.length === 1 ? ' products-columns-single' : ''}`}>
+          {sections.map((section) => (
+            <section className="products-section" id={`${section.key}s`} key={section.key}>
+              <h2 className="section-title">{section.title}</h2>
+              <div className="products-list">
+                {section.products.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
